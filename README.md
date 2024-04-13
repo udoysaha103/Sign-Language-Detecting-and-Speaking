@@ -40,11 +40,10 @@ It consists of three main programs:
 1. **DataCollection.py**: This program collects the data required for training the sign language recognition model. It accesses the camera device to capture frames, extracts facial and hand landmarks using MediaPipe Holistic, and stores the keypoints in a numpy array. The dataset creation process is lightweight and efficient, making the execution faster.
 
 - **NB:** *New actions can be added by modifying `line 12` of this file.*
-
-The dataset is saved in the `DATASET` directory.
+ The dataset is saved in the `DATASET` directory.
 
 2. **ModelTraining.py**: This program trains the AI model for sign language recognition and saves the trained model in the `mymodel.keras` file. It utilizes a Sequential model with LSTM and Dense layers to produce a probability distribution for each action. The action with the highest probability is considered the output action.
-- **NB:** The number of epochs for training can be adjusted from `line 57` of this file based on the model's performance. 
+- **NB:** The number of epochs for training can be adjusted from `line 57` of this file based on the model's performance.  
 The training log, including error and accuracy information, is stored in the `LOGS` folder. The model is also evaluated within this program.
 
 3. **TestingTheModel.py**: This program loads the trained model and performs real-time sign language recognition using webcam input. It predicts the sign language gestures and utilizes the `pyttsx3` module to speak out the predicted word in real-time.
