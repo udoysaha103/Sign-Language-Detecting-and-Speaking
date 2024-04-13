@@ -48,8 +48,10 @@ if __name__ == "__main__":
 
     frame_roll = []                 # To store the consecutive frames
     last_word = ""                  # To store the last predicted word
-    threshold = 0.8                 # Threshold for the prediction
+    threshold = 0.9                 # Threshold for the prediction
     res = []                        # To store the prediction probabilities
+
+    # add a stabilizer if possible
 
     cap = cv2.VideoCapture(0)
 

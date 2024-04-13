@@ -89,13 +89,13 @@ if __name__ == "__main__":
 
 
                     # Displaying data collection message on screen
-                    if video == 0:      # Show 'Starting collection for ACTION' for a new Action
+                    if video == 0 and frame_num == 0:      # Show 'Starting collection for ACTION' for a new Action
                         cv2.putText(image, f"Starting collection for {action.upper()}", (120,200), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255, 0), 4, cv2.LINE_AA)
                         cv2.putText(image, f'For: {action}, Video no: {video}, Frame no: {frame_num}', (15,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
                         
                         cv2.imshow("Collecting frames", image)
                         cv2.waitKey(10000)  # Wait for 10 seconds before starting the collection
-                    elif video == 30 or video == 70:      # Show 'Rest for ACTION' for a new Action
+                    elif (video == 30 or video == 70) and frame_num == 0:      # Show 'Rest for ACTION' for a new Action
                         cv2.putText(image, f"Rest for {action.upper()}", (120,200), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255, 0), 4, cv2.LINE_AA)
                         cv2.putText(image, f'For: {action}, Video no: {video}, Frame no: {frame_num}', (15,12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
                         

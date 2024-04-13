@@ -23,7 +23,7 @@ if __name__ == "__main__":
         for video in range(no_videos):
             frames = []     # To store the all the 30 FRAMES of a single VIDEO
             for frame_num in range(frames_per_video):
-                res = np.load(os.path.join(DATA_PATH, action, str(video), f"{frame_num}.npy"))  # Loading the frame
+                res = np.load(os.path.join(DATA_PATH, action, str(video), f"{frame_num}.npy"), encoding='ASCII')  # Loading the frame
                 frames.append(res)
 
             videos.append(frames)               # Appending the features of a single video
@@ -52,9 +52,10 @@ if __name__ == "__main__":
 
     # Compiling the model with 'Adam' optimizer
     model.compile(optimizer="Adam", loss="categorical_crossentropy", metrics=["categorical_accuracy"])
-
+    
     # Training the model with the training data
-    model.fit(X_train, Y_train, epochs=1000, callbacks=[tb_callback])   # <-- Training the model for 500 epochs, changing the number of epochs can be done based on the model performance
+    model.fit(X_train, Y_train, epochs=1000, callbacks=[tb_callback])   
+    # <-- Training the model for 1000 epochs, changing the number of epochs can be done based on the model performance
 
     # Summary of the model - Model Architecture
     print(model.summary())
