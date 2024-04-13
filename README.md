@@ -6,7 +6,9 @@ This project aims to recognize sign language gestures using webcam input and spe
 
 ## Demo
 
-.
+https://github.com/udoysaha103/Sign-Language-Detecting-and-Speaking/assets/87817560/da073f60-1d8f-4196-a9f6-74aa942dcb32
+
+
 
 
 ## Installing dependencies
